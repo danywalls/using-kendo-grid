@@ -2,13 +2,18 @@
 [data]="playerData"
 [pageable]="true"
 [sortable]="true"
-
 [sort]="playerGridState.sort"
 [skip]="playerGridState.skip"
 [pageSize]="playerGridState.take"
 (dataStateChange)="onDataStateChange($event)"
+[groupable]="true"
+[group]="playerGridState.group"
+[filterable]="true"
+[filter]="playerGridState.filter"
 >
   <kendo-grid-column field="first_name" title="Name" ></kendo-grid-column>
+
+
   <kendo-grid-column field="last_name" title="LastName"></kendo-grid-column>
   <kendo-grid-column field="position" title="Position" [width]="100">
     <ng-template kendoGridCellTemplate let-dataItem>
